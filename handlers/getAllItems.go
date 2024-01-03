@@ -3,21 +3,18 @@ package handlers
 import (
 	"context"
 	"encoding/json"
-	"log"
 	"net/http"
 	"os"
 	"shopping-cart/db"
 	"shopping-cart/functions"
-
-	"github.com/joho/godotenv"
 )
 
 func GetAllItemsHandler(w http.ResponseWriter, r *http.Request) {
-	if os.Getenv("ENVIRONMENT") == "development" {
-		if err := godotenv.Load(); err != nil {
-			log.Fatal("Error loading .env file")
-		}
-	}
+	// if os.Getenv("ENVIRONMENT") == "development" {
+	// 	if err := godotenv.Load(); err != nil {
+	// 		log.Fatal("Error loading .env file")
+	// 	}
+	// }
 
 	mongodbURI := os.Getenv("MONGODB_URI")
 	client := db.ConnectDB(mongodbURI)
