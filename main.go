@@ -3,13 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"shopping-cart/db"
 	"shopping-cart/handlers"
-
-	"github.com/joho/godotenv"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -18,9 +15,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	if err := godotenv.Load(); err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	// if err := godotenv.Load(); err != nil {
+	// 	log.Fatal("Error loading .env file")
+	// }
 
 	mongodbURI := os.Getenv("MONGODB_URI")
 	client := db.ConnectDB(mongodbURI)
