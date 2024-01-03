@@ -13,8 +13,10 @@ import (
 )
 
 func GetAllItemsHandler(w http.ResponseWriter, r *http.Request) {
-	if err := godotenv.Load(); err != nil {
-		log.Fatal("Error loading .env file")
+	if os.Getenv("ENVIRONMENT") == "development" {
+		if err := godotenv.Load(); err != nil {
+			log.Fatal("Error loading .env file")
+		}
 	}
 
 	mongodbURI := os.Getenv("MONGODB_URI")
