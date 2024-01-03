@@ -1,0 +1,28 @@
+# Binaries and Executables
+/bin/
+*.exe
+*.exe~
+
+# Dependency directories (remove the comment below if you want to ignore them)
+# /vendor/
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
+.glide/
+
+# VS Code directory
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# MacOS folder attribute files
+.DS_Store
+
+# Environment Variables file
+.env
